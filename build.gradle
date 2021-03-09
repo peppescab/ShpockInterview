@@ -74,6 +74,8 @@ buildscript {
         guava_version = "30.1-jre"
 
         material_diaog_version = "3.3.0"
+
+        picassoVersion = '2.71828'
     }
 
     repositories {
