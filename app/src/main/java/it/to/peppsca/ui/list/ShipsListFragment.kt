@@ -4,25 +4,23 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import it.to.peppsca.R
 import it.to.peppsca.databinding.FragmentShipslistBinding
+import it.to.peppsca.ui.base.BaseFragment
 import it.to.peppsca.ui.list.adapter.PirateShipsAdapter
 
 /**
  * A [ShipsListFragment] that displays a list of pirates ships
  */
 @AndroidEntryPoint
-class ShipsListFragment : Fragment() {
+class ShipsListFragment : BaseFragment<FragmentShipslistBinding>() {
 
     private val viewModel: ShipsListViewModel by viewModels()
-
-    private var _binding: FragmentShipslistBinding? = null
-    private val binding get() = _binding!!
 
     private lateinit var shipListAdapter: PirateShipsAdapter
 
@@ -31,7 +29,7 @@ class ShipsListFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentShipslistBinding.inflate(inflater, container, false)
+        setBinding(FragmentShipslistBinding.inflate(inflater, container, false))
         binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
         setupVisitorsList()
@@ -56,9 +54,9 @@ class ShipsListFragment : Fragment() {
 
     private fun setupVisitorsList() {
         shipListAdapter = PirateShipsAdapter {
-
+            findNavController().navigate(ShipsListFragmentDirections.actionShipsListFragmentToShipDetailFragment(it))
         }
-        binding.rvShips.addItemDecoration(DividerItemDecoration(requireActivity(), DividerItemDecoration.VERTICAL))
+        binding.rvShips.addItemDecoration(DividerItemDecoration(requireActivity(), DividerItemDecoration.HORIZONTAL))
         binding.rvShips.adapter = shipListAdapter
     }
 

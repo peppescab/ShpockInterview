@@ -20,6 +20,20 @@ interface Mapper<Input, Output> {
      * @param input the input to be transformed
      * @return transformation result
      */
+    fun mapList(input: List<Input>): List<Output> {
+        val result: MutableList<Output> = LinkedList()
+        for (item in input) {
+                result.add(map(item))
+        }
+        return result
+    }
+
+    /**
+     * Transforms a [List] of [Input] into a [List] of [Output].
+     *
+     * @param input the input to be transformed
+     * @return transformation result
+     */
     fun mapNotNull(input: List<Input?>): List<Output> {
         val result: MutableList<Output> = LinkedList()
         for (item in input) {

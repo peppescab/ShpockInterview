@@ -12,76 +12,102 @@
             type="it.to.peppsca.ui.detail.ShipDetailViewModel" />
     </data>
 
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <ImageView
-            android:id="@+id/iv_user_avatar"
-            android:layout_width="200dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="16dp"
-            android:picassoSrc="@{viewModel.pirateShip.image}"
-            app:layout_constraintDimensionRatio="1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@drawable/abc_vector_test" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
 
-        <TextView
-            android:id="@+id/tv_user_name"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:lines="1"
-            android:text="@{viewModel.pirateShip.title}"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fabDynamic" />
+            <ImageView
+                android:id="@+id/iv_image"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:adjustViewBounds="true"
+                android:picassoSrc="@{viewModel.pirateShip.image}"
+                android:scaleType="centerCrop"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/abc_vector_test" />
 
-        <TextView
-            android:id="@+id/tv_user_surname"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:lines="1"
-            android:text="@{viewModel.pirateShip.description}"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            app:layout_constraintEnd_toEndOf="@+id/tv_user_name"
-            app:layout_constraintStart_toStartOf="@+id/tv_user_name"
-            app:layout_constraintTop_toBottomOf="@id/tv_user_name"
-            tools:text="Surname" />
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="bold"
+                android:maxLines="2"
+                android:text="@{viewModel.pirateShip.title}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toStartOf="@+id/tv_price"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fabDynamic"
+                tools:text="placeholder text very looong" />
 
-        <TextView
-            android:id="@+id/tv_user_email"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            android:gravity="end"
-            android:lines="1"
-            android:text="@{viewModel.pirateShip.price}"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_user_surname"
-            tools:text="email@email.com" />
+            <View
+                android:id="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:background="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fabDynamic"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            app:layout_constraintBottom_toBottomOf="@+id/iv_user_avatar"
-            app:layout_constraintEnd_toEndOf="@+id/iv_user_avatar"
-            app:layout_constraintTop_toBottomOf="@+id/iv_user_avatar"
-            app:srcCompat="@android:drawable/btn_star_big_off" />
+            <TextView
+                android:id="@+id/tv_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@{viewModel.pirateShip.description}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/line"
+                tools:text="Surname" />
+
+            <TextView
+                android:id="@+id/tv_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:gravity="end"
+                android:lines="1"
+                android:text="@{@string/price_label(viewModel.pirateShip.price)}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/green"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_title"
+                tools:text="240 euros" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabDynamic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:clickable="true"
+                app:backgroundTint="@color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_image"
+                app:layout_constraintEnd_toEndOf="@+id/iv_image"
+                app:layout_constraintTop_toBottomOf="@+id/iv_image"
+                app:srcCompat="@drawable/ic_steering_wheel" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
 </layout>

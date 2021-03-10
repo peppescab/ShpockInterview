@@ -49,7 +49,7 @@ class GetPirateUseCaseTest {
         val STUB_PIRATES_SHIPS_ENTITY = PirateShipEntity(
             12, "How misty. You ransack like an ale.",
             "Anchors scream on yellow fever at haiti! How sunny. You haul like a cloud.",
-            34, "http://images.bit-tech.net/content_images/2008/01/pirates_of_the_burning_sea/p.jpg",
+            "34", "http://images.bit-tech.net/content_images/2008/01/pirates_of_the_burning_sea/p.jpg",
             "ah"
         )
         val STUB_LIST_PIRATES_SHIPS = listOf(STUB_PIRATES_SHIPS_ENTITY, STUB_PIRATES_SHIPS_ENTITY.copy(id = 13))

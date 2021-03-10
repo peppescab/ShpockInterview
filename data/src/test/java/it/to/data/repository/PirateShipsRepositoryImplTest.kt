@@ -51,7 +51,7 @@ class PirateShipsRepositoryImplTest {
         val STUB_PIRATES_SHIPS_ENTITY = PirateShipEntity(
             12, "How misty. You ransack like an ale.",
             "Anchors scream on yellow fever at haiti! How sunny. You haul like a cloud.",
-            34, "http://images.bit-tech.net/content_images/2008/01/pirates_of_the_burning_sea/p.jpg",
+            "34", "http://images.bit-tech.net/content_images/2008/01/pirates_of_the_burning_sea/p.jpg",
             "ah"
         )
         val STUB_PIRATES_SHIPS_LIST = listOf(STUB_PIRATES_SHIPS, null)
