@@ -13,9 +13,9 @@ class PirateShipToEntityMapper @Inject constructor() : Mapper<PirateShip, Pirate
     override fun map(input: PirateShip): PirateShipEntity = with(input) {
         PirateShipEntity(
             id,
-            title,
+            title?:"Ship Default Title",
             description,
-            price,
+            price.toString(),
             image,
             greeting_type.orEmpty()
         )

@@ -5,17 +5,16 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import io.djungle.mvvmi.ui.list.adapter.OnItemSelected
 import it.to.domain.entity.PirateShipEntity
 import it.to.peppsca.R
 import it.to.peppsca.databinding.ItemPirateShipBinding
 
 /**
- * [UsersListAdapter] is the adapter that handles the user list
+ * [PirateShipsAdapter] is the adapter that handles the user list
  */
-class UsersListAdapter(
+class PirateShipsAdapter(
     private val callback: OnItemSelected<PirateShipEntity>
-) : RecyclerView.Adapter<UsersListAdapter.ViewHolder>() {
+) : RecyclerView.Adapter<PirateShipsAdapter.ViewHolder>() {
 
     private var pirateShips = listOf<PirateShipEntity>()
 

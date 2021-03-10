@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">Shpock</string>
     <string name="this_is_an_avatar">This is an avatar</string>
+    <string name="general_error">Ops Something went wrong!</string>
+    <string name="price_label">Price: %s $</string>
 </resources>

@@ -7,7 +7,7 @@ data class PirateShipEntity(
     val id: Long,
     val title: String,
     val description: String,
-    val price: Int,
+    val price: String,
     val image: String,
-    val greeting_type: String?
+    val greeting_type: String
 )

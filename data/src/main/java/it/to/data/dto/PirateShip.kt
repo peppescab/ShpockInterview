@@ -11,7 +11,7 @@ data class PirateShip(
     @SerializedName("id")
     val id: Long,
     @SerializedName("title")
-    val title: String,
+    val title: String?,
     @SerializedName("description")
     val description: String,
     @SerializedName("price")
