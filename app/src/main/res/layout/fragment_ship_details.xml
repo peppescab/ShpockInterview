@@ -44,14 +44,12 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
                 android:fontFamily="bold"
-                android:maxLines="2"
                 android:text="@{viewModel.pirateShip.title}"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="@color/black"
                 app:layout_constraintEnd_toStartOf="@+id/tv_price"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fabDynamic"
-                tools:text="placeholder text very looong" />
+                app:layout_constraintTop_toBottomOf="@+id/fabDynamic" />
 
             <View
                 android:id="@+id/line"
@@ -78,7 +76,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/line"
-                tools:text="Surname" />
+                tools:text="@string/text_for_test" />
 
             <TextView
                 android:id="@+id/tv_price"
