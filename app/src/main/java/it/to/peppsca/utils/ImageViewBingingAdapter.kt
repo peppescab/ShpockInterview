@@ -11,6 +11,6 @@ import it.to.peppsca.R
 @BindingAdapter("android:picassoSrc")
 fun setPicassoSrc(view: ImageView, url: String?) {
     url?.let {
-        Picasso.get().load(it).placeholder(R.drawable.default_ship).error(R.drawable.default_ship).into(view)
+        Picasso.get().load(it).placeholder(R.drawable.ship_placeholder).error(R.drawable.default_ship).into(view)
     }
 }
