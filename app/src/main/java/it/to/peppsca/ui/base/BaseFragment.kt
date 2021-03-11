@@ -3,6 +3,9 @@ package it.to.peppsca.ui.base
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 
+/**
+ * [BaseFragment] to handle binding common stuff
+ */
 abstract class BaseFragment<T : ViewBinding> : Fragment() {
 
     private var _binding: T? = null

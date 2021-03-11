@@ -2,7 +2,7 @@ package it.to.peppsca.ui.list
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
-import com.planetsmartcity.gatekeeper.utils.Lce
+import it.to.peppsca.utils.Lce
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.impl.annotations.SpyK

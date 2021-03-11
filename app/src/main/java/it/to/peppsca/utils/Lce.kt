@@ -1,4 +1,4 @@
-package com.planetsmartcity.gatekeeper.utils
+package it.to.peppsca.utils
 
 /**
  * Class for handling the state of a resource

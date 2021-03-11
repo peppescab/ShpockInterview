@@ -3,7 +3,7 @@ package it.to.peppsca.ui.list
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.planetsmartcity.gatekeeper.utils.Lce
+import it.to.peppsca.utils.Lce
 import dagger.hilt.android.lifecycle.HiltViewModel
 import it.to.domain.usecase.GetPirateUseCase
 import it.to.peppsca.ui.mapper.PirateShipEntityToModelMapper

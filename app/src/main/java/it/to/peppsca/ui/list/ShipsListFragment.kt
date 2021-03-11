@@ -56,7 +56,6 @@ class ShipsListFragment : BaseFragment<FragmentShipslistBinding>() {
         shipListAdapter = PirateShipsAdapter {
             findNavController().navigate(ShipsListFragmentDirections.actionShipsListFragmentToShipDetailFragment(it))
         }
-       // binding.rvShips.addItemDecoration(DividerItemDecoration(requireActivity(), DividerItemDecoration.HORIZONTAL))
         binding.rvShips.adapter = shipListAdapter
     }
 
