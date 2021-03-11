@@ -7,12 +7,10 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import it.to.data.api.PiratesApi
-import it.to.data.api.adapter.LocalDateTimeAdapter
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import java.time.LocalDateTime
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
@@ -26,10 +24,7 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun provideGson(localDateTimeAdapter: LocalDateTimeAdapter): Gson =
-        GsonBuilder().serializeNulls()
-            .registerTypeAdapter(LocalDateTime::class.java, localDateTimeAdapter)
-            .create()
+    fun provideGson(): Gson = GsonBuilder().serializeNulls().create()
 
     @Provides
     @Singleton
